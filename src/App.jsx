@@ -1,6 +1,6 @@
 import './App.css'
 import StudentList from './StudentList'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const initialStudents = [
   {
@@ -70,7 +70,9 @@ function App() {
   return (
     <>
     <h1>List Of Students</h1>
-      <StudentList students={students}/>
+    {students.map((student, index) => (
+        <StudentList key={index} student={student} />
+      ))}
     </>
   )
 
